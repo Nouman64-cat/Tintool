@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "@uiw/react-color": "^2.3.2",
     "chroma-js": "^3.1.2",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
