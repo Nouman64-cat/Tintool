@@ -11,7 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "#E1179E",
+        }
       },
+      fontFamily: {
+        montserrat: ['montserrat', 'sans-serif'],
+        tangerine: ['Tangerine', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],	
+        inter: ['Inter', 'sans-serif'],
+        italiana: ['Italiana', 'sans-serif']
+      },
+      
     },
   },
   plugins: [],
