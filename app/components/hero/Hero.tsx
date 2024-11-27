@@ -1,12 +1,25 @@
-import React from "react";
-import { FaWandMagicSparkles } from "react-icons/fa6";
+"use client";
+import React, { useState, useEffect } from "react";
 import { ImMakeGroup } from "react-icons/im";
+import Palette from "../palette/Palette";
+
+import BaseColorInput from "../input/BaseColorInput";
+import { generatePalette } from "@/app/utils/generatePalette.";
 
 const Hero = () => {
+  const [baseColor, setBaseColor] = useState<string>("#db3db9"); // Default base color
+  const [palette, setPalette] = useState<string[]>([]);
+
+  // Automatically generate palette when baseColor changes
+  useEffect(() => {
+    const palette = generatePalette(baseColor); // Generate palette from base color
+    setPalette(palette);
+  }, [baseColor]); // Triggered whenever baseColor changes
+
   return (
     <div className="flex flex-col items-center gap-4 mt-20">
-      <div className="bg-gradient-to-r from-primary via-blue-500 to-purple-500  text-white px-5 rounded-lg py-2 font-poppins font-light text-sm">
-        <p>Generate color palette that enhance web design</p>
+      <div className="bg-gradient-to-r from-primary via-blue-500 to-purple-500 text-white px-5 rounded-lg py-2 font-poppins font-light text-sm">
+        <p>Generate color palettes that enhance web design</p>
       </div>
       <div className="text-center flex flex-col items-center font-light text-zinc-600">
         <h1 className="text-9xl text-zinc-700 font-italiana">Tintool</h1>
@@ -16,12 +29,14 @@ const Hero = () => {
           Life!
         </p>
       </div>
-      <div className="mt-4">
-        <button className="flex items-center gap-4 font-poppins font-normal bg-gradient-to-r from-primary via-blue-500 to-purple-600 text-white rounded-lg px-5 py-3 hover:opacity-90">
-          <ImMakeGroup />
-          Generate Palette
-        </button>
-      </div>
+      {/* Base Color Input Component */}
+      <BaseColorInput
+        baseColor={baseColor}
+        setBaseColor={setBaseColor}
+        onColorChange={() => {}} // No need to pass a handler since useEffect handles changes
+      />
+      {/* Palette Component */}
+      {palette.length > 0 && <Palette colors={palette} />}
     </div>
   );
 };

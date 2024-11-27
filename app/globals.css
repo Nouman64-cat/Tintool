@@ -7,3 +7,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.color-picker-circle {
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden;   /* Clip content */
+    aspect-ratio: 1;    /* Maintain a square shape */
+  }
+  

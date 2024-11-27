@@ -5,7 +5,6 @@ import Navbar from './components/navbar/Navbar'
 const page = () => {
   return (
     <div className='p-10'>
-      <Navbar />
       <Hero />
     </div>
   )
