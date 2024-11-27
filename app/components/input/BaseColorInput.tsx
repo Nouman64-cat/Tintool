@@ -35,4 +35,3 @@ const BaseColorInput: React.FC<BaseColorInputProps> = ({
 };
 
 export default BaseColorInput;
-// Compare this snippet from app/components/navbar/Navbar.tsx:
