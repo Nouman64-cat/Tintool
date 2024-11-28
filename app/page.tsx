@@ -4,7 +4,7 @@ import Navbar from './components/navbar/Navbar'
 
 const page = () => {
   return (
-    <div className='p-10'>
+    <div className='h-screen'>
       <Hero />
     </div>
   )
