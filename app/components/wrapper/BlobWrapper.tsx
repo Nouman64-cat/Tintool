@@ -11,10 +11,11 @@ const BlobWrapper: React.FC<BlobWrapperProps> = ({ palette, children }) => {
       {/* Blob 1 */}
       {palette[0] && (
         <div
-          className="absolute w-72 h-72 rounded-full mix-blend-multiply animate-float"
+          className="absolute rounded-full mix-blend-multiply animate-float 
+                     w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72"
           style={{
             backgroundColor: palette[0],
-            top: "10%",
+            top: "15%",
             left: "5%",
           }}
         ></div>
@@ -22,21 +23,23 @@ const BlobWrapper: React.FC<BlobWrapperProps> = ({ palette, children }) => {
       {/* Blob 2 */}
       {palette[1] && (
         <div
-          className="absolute w-80 h-80 rounded-full mix-blend-multiply animate-float"
+          className="absolute rounded-full mix-blend-multiply animate-float 
+                     w-48 h-48 sm:w-64 sm:h-64 lg:w-48 lg:h-48"
           style={{
             backgroundColor: palette[1],
-            top: "80%",
-            left: "75%",
+            top: "50%",
+            left: "70%",
           }}
         ></div>
       )}
       {/* Blob 3 */}
       {palette[2] && (
         <div
-          className="absolute w-64 h-64 rounded-full mix-blend-multiply animate-float"
+          className="absolute rounded-full mix-blend-multiply animate-float 
+                     w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64"
           style={{
             backgroundColor: palette[2],
-            top: "20%",
+            top: "10%",
             left: "80%",
           }}
         ></div>

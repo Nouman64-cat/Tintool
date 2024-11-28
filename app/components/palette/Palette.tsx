@@ -13,20 +13,20 @@ const Palette: React.FC<PaletteProps> = ({ colors }) => {
   };
 
   return (
-    <div className="flex gap-8 mt-4 font-poppins">
+    <div className="flex flex-wrap gap-4 mt-4 font-poppins justify-center">
       {colors.map((color, index) => (
         <div
           key={index}
-          className="relative group w-60 h-60 rounded-lg flex flex-col items-center justify-center text-white cursor-pointer"
+          className="relative group md:w-40 md:h-40 sm:w-24 sm:h-24 w-32 h-32 rounded-lg sm:rounded-md flex flex-col items-center justify-center text-white cursor-pointer"
           style={{ backgroundColor: color }}
           onClick={() => copyToClipboard(color)} // Copy color on click
         >
           {/* Display hex value */}
-          <p className="text-lg font-normal">{color}</p>
+          <p className="text-sm font-normal sm:text-xs">{color}</p>
 
           {/* Copy Icon, visible on hover */}
           <div className="absolute flex items-center justify-center w-full bottom-2 transition-all duration-300">
-            <FiCopy className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={20} />
+            <FiCopy className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={16} />
           </div>
         </div>
       ))}
