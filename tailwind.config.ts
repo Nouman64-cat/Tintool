@@ -22,6 +22,16 @@ export default {
         inter: ['Inter', 'sans-serif'],
         italiana: ['Italiana', 'sans-serif']
       },
+      animation: {
+        highlight: "highlight 3s ease-in-out",
+      },
+      keyframes: {
+        highlight: {
+          "0%": { boxShadow: "0 0 0px rgba(255, 215, 0, 0)" },
+          "50%": { boxShadow: "0 0 15px rgba(255, 215, 0, 0.8)" },
+          "100%": { boxShadow: "0 0 0px rgba(255, 215, 0, 0)" },
+        },
+      },
       
     },
   },
