@@ -7,13 +7,35 @@ import { generatePalette } from "@/app/utils/generatePalette.";
 
 
 const Hero = () => {
-  const [baseColor, setBaseColor] = useState<string>("#db3db9"); // Default base color
+  // Array of predefined hex values
+  const hexColors = [
+    "#FF5733",
+    "#33FF57",
+    "#3357FF",
+    "#FF33A1",
+    "#A133FF",
+    "#FFC300",
+    "#33FFF6",
+    "#C70039",
+    "#DB3DB9",
+    "#47A3FF",
+  ];
+
+  const [baseColor, setBaseColor] = useState<string>(""); // Initially empty
   const [palette, setPalette] = useState<string[]>([]);
+
+  // Set a random base color after the component is mounted (client-side)
+  useEffect(() => {
+    const getRandomHexColor = () => hexColors[Math.floor(Math.random() * hexColors.length)];
+    setBaseColor(getRandomHexColor());
+  }, []); // Runs only once on component mount
 
   // Automatically generate palette when baseColor changes
   useEffect(() => {
-    const generatedPalette = generatePalette(baseColor); // Generate palette from base color
-    setPalette(generatedPalette);
+    if (baseColor) {
+      const generatedPalette = generatePalette(baseColor); // Generate palette from base color
+      setPalette(generatedPalette);
+    }
   }, [baseColor]); // Triggered whenever baseColor changes
 
   return (
@@ -31,11 +53,13 @@ const Hero = () => {
           </p>
         </div>
         {/* Base Color Input Component */}
-        <BaseColorInput
-          baseColor={baseColor}
-          setBaseColor={setBaseColor}
-          onColorChange={() => {}} // No need to pass a handler since useEffect handles changes
-        />
+        {baseColor && (
+          <BaseColorInput
+            baseColor={baseColor}
+            setBaseColor={setBaseColor}
+            onColorChange={() => {}} // No need to pass a handler since useEffect handles changes
+          />
+        )}
         {/* Palette Component */}
         {palette.length > 0 && <Palette colors={palette} />}
       </div>
