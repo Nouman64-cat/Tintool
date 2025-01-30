@@ -9,14 +9,14 @@ import Link from "next/link";
 function Navbar() {
   const newLocal = <Image src={logo} alt="Tintool Logo" width={100} height={100} />;
   return (
-    <div className="w-full flex justify-between items-center bg-white px-16 py-12 fixed top-0 left-0 z-50 mb-4">
+    <div className="w-full flex justify-between items-center bg-white fixed top-0 left-0 z-50 mb-4 px-5 py-2">
       {/* Logo */}
       <div>
         {newLocal}
       </div>
 
       {/* Center Links */}
-      <div className="flex gap-6">
+      <div className="flex gap-4">
         <Link href="/" className="text-gray-700 font-poppins hover:opacity-90">
           Home
         </Link>

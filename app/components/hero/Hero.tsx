@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <BlobWrapper palette={palette}>
-      <div className="flex flex-col items-center gap-4 mt-24 relative z-10 py-20">
+      <div className="flex flex-col items-center gap-4 relative z-10">
         <div className="bg-gradient-to-r from-primary via-blue-500 to-purple-500 text-white px-5 rounded-lg py-2 font-poppins font-light text-sm mt-4">
           <p>Generate color palettes that enhance web design</p>
         </div>
