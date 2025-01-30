@@ -2,26 +2,45 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/public/tintool-png.png";
 import { FaWandMagicSparkles } from "react-icons/fa6";
+import Link from "next/link";
 
-const Navbar = () => {
+
+
+function Navbar() {
+  const newLocal = <Image src={logo} alt="Tintool Logo" width={100} height={100} />;
   return (
-    <div className="flex justify-between">
+    <div className="w-full flex justify-between items-center bg-white px-16 py-12 fixed top-0 left-0 z-50 mb-4">
+      {/* Logo */}
       <div>
-        <Image
-          src={logo}
-          alt="Picture of the author"
-          width={100}
-          height={100}
-        />
+        {newLocal}
       </div>
+
+      {/* Center Links */}
+      <div className="flex gap-6">
+        <Link href="/" className="text-gray-700 font-poppins hover:opacity-90">
+          Home
+        </Link>
+        <Link href="/about" className="text-gray-700 font-poppins hover:opacity-90">
+          About
+        </Link>
+        <Link href="/blogs" className="text-gray-700 font-poppins hover:opacity-90">
+          Blogs
+        </Link>
+        <Link href="/magic" className="text-gray-700 font-poppins hover:opacity-90">
+          Magic
+        </Link>
+      </div>
+
+      {/* Button */}
       <div>
-        <button className="flex items-center gap-4 font-poppins bg-gradient-to-r from-primary via-blue-500 to-purple-600 text-white rounded-lg px-5 py-3 hover:opacity-90">
+        <button className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg px-5 py-3 hover:opacity-90">
           <FaWandMagicSparkles />
           Surprise me
         </button>
       </div>
     </div>
   );
-};
+}
+
 
 export default Navbar;
