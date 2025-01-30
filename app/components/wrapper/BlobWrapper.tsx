@@ -7,7 +7,7 @@ interface BlobWrapperProps {
 
 const BlobWrapper: React.FC<BlobWrapperProps> = ({ palette, children }) => {
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden mt-20">
       {/* Blob 1 */}
       {palette[0] && (
         <div
