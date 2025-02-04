@@ -40,10 +40,8 @@ const Hero = () => {
 
   return (
     <BlobWrapper palette={palette}>
-      <div className="flex flex-col items-center gap-4 relative z-10">
-        <div className="bg-gradient-to-r from-primary via-blue-500 to-purple-500 text-white px-5 rounded-lg py-2 font-poppins font-light text-sm mt-4">
-          <p>Generate color palettes that enhance web design</p>
-        </div>
+      <div className="flex flex-col items-center gap-4 relative mt-10 z-10">
+
         <div className="text-center flex flex-col items-center font-light text-zinc-600">
           <h1 className="text-9xl text-zinc-700 font-italiana">Tintool</h1>
           <p className="font-poppins w-[70%] text-sm">
