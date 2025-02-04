@@ -23,6 +23,9 @@ function Navbar() {
         <Link href="/about" className="text-gray-700 font-poppins hover:opacity-90">
           About
         </Link>
+        <Link href="/study-material" className="text-gray-700 font-poppins hover:opacity-90">
+          Study-Material
+          </Link>
         <Link href="/blogs" className="text-gray-700 font-poppins hover:opacity-90">
           Blogs
         </Link>
