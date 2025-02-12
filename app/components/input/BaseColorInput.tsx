@@ -41,6 +41,11 @@ const BaseColorInput: React.FC<BaseColorInputProps> = ({
     }
   }, []);
 
+  // Sync inputValue with baseColor when baseColor changes
+  useEffect(() => {
+    setInputValue(baseColor);
+  }, [baseColor]);
+
   const handleColorChange = (color: string) => {
     setBaseColor(color); // Update base color
     setInputValue(color); // Update input field value
@@ -52,11 +57,14 @@ const BaseColorInput: React.FC<BaseColorInputProps> = ({
     const value = e.target.value;
     setInputValue(value); // Update the input field
 
-    if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
-      // Validate hex color format
-      setBaseColor(value);
-      setError(null); // Clear error
-      onColorChange();
+    // Allow partial inputs (e.g., "#", "#F", "#FF", etc.)
+    if (value === "" || /^#[0-9A-Fa-f]{0,6}$/i.test(value)) {
+      setError(null); // Clear error for valid partial or complete inputs
+      if (/^#([0-9A-Fa-f]{3}){1,2}$/i.test(value)) {
+        // Only update baseColor if the input is a complete HEX color
+        setBaseColor(value);
+        onColorChange();
+      }
     } else {
       setError("Invalid hex color. Please enter a valid value like #RRGGBB.");
       updateSuggestedColor(); // Update suggested color dynamically

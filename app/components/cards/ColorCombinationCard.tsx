@@ -5,12 +5,14 @@ interface ColorCombinationCardProps {
   heading: string;
   description: string;
   img: string;
+  href: string; // New prop for dynamic navigation
 }
 
 const ColorCombinationCard: React.FC<ColorCombinationCardProps> = ({
   heading,
   description,
   img,
+  href,
 }) => {
   return (
     <div className="group bg-white rounded-xl border border-slate-300 shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1.5 overflow-hidden">
@@ -35,7 +37,7 @@ const ColorCombinationCard: React.FC<ColorCombinationCardProps> = ({
         </p>
 
         <Link 
-          href={`/study-material/${heading.toLowerCase()}`}
+          href={href} 
           className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 transition-all duration-300 font-poppins"
         >
           Explore Scheme
